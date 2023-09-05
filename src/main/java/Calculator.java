@@ -18,4 +18,8 @@ public class Calculator {
     public void addDigit(int digit) {
         value = converter.fromQuaternary(converter.toQuaternary(value) * 4 + digit);
     }
+
+    public void clear() {
+        value = 0;
+    }
 }

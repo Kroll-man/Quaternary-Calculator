@@ -31,4 +31,13 @@ public class CalculatorTest {
         calculator.toggleDisplay();
         Assertions.assertEquals(6, calculator.displayValue());
     }
+
+    @Test
+    public void testClear() {
+        Calculator calculator = new Calculator(false);
+        calculator.addDigit(1);
+        calculator.addDigit(2);
+        calculator.clear();
+        Assertions.assertEquals(0, calculator.displayValue());
+    }
 }
