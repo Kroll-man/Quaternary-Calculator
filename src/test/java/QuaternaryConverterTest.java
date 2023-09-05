@@ -40,4 +40,15 @@ public class QuaternaryConverterTest {
         Assertions.assertEquals(-1110121023, converter.toQuaternary(-345675));
     }
 
+    @Test
+    public void testFromQuaternary0is0(){
+        QuaternaryConverter converter = new QuaternaryConverter();
+        Assertions.assertEquals(0, converter.fromQuaternary(0));
+    }
+
+    @Test
+    public void testFromQuaternaryLargeInput(){
+        QuaternaryConverter converter = new QuaternaryConverter();
+        Assertions.assertEquals(345675, converter.fromQuaternary(1110121023));
+    }
 }
