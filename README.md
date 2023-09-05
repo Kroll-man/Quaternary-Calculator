@@ -4,7 +4,7 @@ A calculator that is designed to perform addition, subtraction, multiplication, 
 # Team Distribution
 - Ellie Bertke (...)
 - Grant Witty (Initial commit, Add calculator classes...)
-- Jeffrey Harmon (Initial commit, Update .gitignore, Create initial GUI window...)
+- Jeffrey Harmon (Initial commit, Update .gitignore, Create initial GUI window, Add QuaternaryConverter...)
 - Victoria Moon (Create README.md, Update gradle and JDK versions...)
 - William Withers (...)
 # Meetings
