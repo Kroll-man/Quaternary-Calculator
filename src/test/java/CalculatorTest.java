@@ -40,4 +40,44 @@ public class CalculatorTest {
         calculator.clear();
         Assertions.assertEquals(0, calculator.displayValue());
     }
+
+    @Test
+    public void testAdd() {
+        Calculator calculator = new Calculator(false);
+        calculator.addDigit(2);
+        calculator.add();
+        calculator.addDigit(3);
+        calculator.equals();
+        Assertions.assertEquals(11, calculator.displayValue());
+    }
+
+    @Test
+    public void testSubtract() {
+        Calculator calculator = new Calculator(false);
+        calculator.addDigit(2);
+        calculator.subtract();
+        calculator.addDigit(3);
+        calculator.equals();
+        Assertions.assertEquals(-1, calculator.displayValue());
+    }
+
+    @Test
+    public void testMultiply() {
+        Calculator calculator = new Calculator(false);
+        calculator.addDigit(2);
+        calculator.multiply();
+        calculator.addDigit(3);
+        calculator.equals();
+        Assertions.assertEquals(12, calculator.displayValue());
+    }
+
+    @Test
+    public void testDivide() {
+        Calculator calculator = new Calculator(false);
+        calculator.addDigit(10);
+        calculator.divide();
+        calculator.addDigit(2);
+        calculator.equals();
+        Assertions.assertEquals(2, calculator.displayValue());
+    }
 }
