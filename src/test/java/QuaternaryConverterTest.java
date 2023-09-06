@@ -51,4 +51,19 @@ public class QuaternaryConverterTest {
         QuaternaryConverter converter = new QuaternaryConverter();
         Assertions.assertEquals(345675, converter.fromQuaternary(1110121023));
     }
+
+    @Test
+    public void testFromQuaternaryTenIsFour(){
+        QuaternaryConverter converter = new QuaternaryConverter();
+        Assertions.assertEquals(4, converter.fromQuaternary(10));
+    }
+
+    @Test
+    public void testFromQuaternarySingeDigitIsSame() {
+        QuaternaryConverter converter = new QuaternaryConverter();
+        Assertions.assertEquals(0, converter.fromQuaternary(0));
+        Assertions.assertEquals(1, converter.fromQuaternary(1));
+        Assertions.assertEquals(2, converter.fromQuaternary(2));
+        Assertions.assertEquals(3, converter.fromQuaternary(3));
+    }
 }
