@@ -89,4 +89,41 @@ public class CalculatorTest {
         calculator.deleteDigit();
         Assertions.assertEquals(1, calculator.displayValue());
     }
+
+    @Test
+    public void testSquare() {
+        Calculator calculator = new Calculator(false);
+        calculator.addDigit(3);
+        calculator.square();
+        Assertions.assertEquals(21, calculator.displayValue());
+    }
+
+    @Test
+    public void testSquareNegative() {
+        Calculator calculator = new Calculator(false);
+        calculator.addDigit(-3);
+        calculator.square();
+        Assertions.assertEquals(21, calculator.displayValue());
+    }
+
+    @Test
+    public void testSquareRoot() {
+        Calculator calculator = new Calculator(false);
+        calculator.addDigit(2);
+        calculator.addDigit(1);
+        calculator.squareRoot();
+        Assertions.assertEquals(3, calculator.displayValue());
+    }
+
+    @Test
+    public void testSquareRootNegative() {
+        Calculator calculator = new Calculator(false);
+        calculator.subtract();
+        calculator.addDigit(2);
+        calculator.addDigit(1);
+        calculator.equals();
+        Assertions.assertEquals(-21, calculator.displayValue());
+        calculator.squareRoot();
+        Assertions.assertEquals(0, calculator.displayValue());
+    }
 }

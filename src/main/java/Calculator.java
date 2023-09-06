@@ -65,4 +65,17 @@ public class Calculator {
         secondValue = 0;
         state = 0;
     }
+
+    public void square() {
+        value = value * value;
+    }
+
+    public void squareRoot() {
+        if (value < 0) {
+            value = 0;
+            return;
+        }
+
+        value = (int) Math.sqrt(value);
+    }
 }
