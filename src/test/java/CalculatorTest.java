@@ -80,4 +80,13 @@ public class CalculatorTest {
         calculator.equals();
         Assertions.assertEquals(2, calculator.displayValue());
     }
+
+    @Test
+    public void testDeleteDigit() {
+        Calculator calculator = new Calculator(false);
+        calculator.addDigit(1);
+        calculator.addDigit(2);
+        calculator.deleteDigit();
+        Assertions.assertEquals(1, calculator.displayValue());
+    }
 }

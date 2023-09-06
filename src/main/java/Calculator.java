@@ -21,6 +21,10 @@ public class Calculator {
         value = converter.fromQuaternary(converter.toQuaternary(value) * 4 + digit);
     }
 
+    public void deleteDigit() {
+        value = converter.fromQuaternary(converter.toQuaternary(value) / 10);
+    }
+
     public void clear() {
         value = 0;
     }
