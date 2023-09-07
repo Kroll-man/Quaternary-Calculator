@@ -8,4 +8,5 @@ A calculator that is designed to perform addition, subtraction, multiplication, 
 - Victoria Moon = Create README.md, Update gradle and JDK versions...
 - William Withers = Implement conversion from decimal...
 # Meetings
-- 2023-09-05, 3:30pm to 7:00 pm. Atendees: all (In-person Grant, William, Jeffrey, Ellie; Virtual via Slack Victoria). Discussed general program layout and functionality
+- 2023-09-05, 3:30pm to 7:00 pm. Attendees: all (In-person Grant, William, Jeffrey, Ellie; Virtual via Slack Victoria). Discussed general program layout and functionality
+- 2023-09-06, 4:10pm to 5:00 pm. Attendees: In-person Grant, William, Jeffrey, Ellie. Discussed current functionality progress and brainstormed ideas for implementation of GUI/Logic interaction.
