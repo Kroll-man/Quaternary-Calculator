@@ -1,3 +1,4 @@
+package CalculatorLogic;
 public class Calculator {
     QuaternaryConverter converter = new QuaternaryConverter();
     Boolean displayInDecimal;

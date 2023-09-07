@@ -1,3 +1,5 @@
+package CalculatorLogic;
+
 public class QuaternaryConverter {
 
     public int fromQuaternary(int quaternary) {
