@@ -4,6 +4,7 @@ By Calc Team 6<br><br>
 
 
 A calculator that is designed to perform addition, subtraction, multiplication, and division with numbers in the quaternary form. Created for CS495 by a class of senior computer science students.<br><br>
+# Manual
 A quaternary number can be entered by the user, then the user has two options; press the (+,-,X,/) operator and enter another quaternary number or you can press the (sqr, sqrt) to perform the sqaure or the square root operations respectively on the single quaternary number.
 # Team Distribution
 - Ellie Bertke = CalculatorGUI.GUI design in JavaFX...
