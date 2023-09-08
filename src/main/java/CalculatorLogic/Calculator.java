@@ -31,6 +31,9 @@ public class Calculator {
     }
 
     private void swap() {
+        if (state != 0)
+            equals();
+
         secondValue = value;
         value = 0;
     }

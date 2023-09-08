@@ -51,39 +51,36 @@ public class GUIController extends GUI {
     static Button nRoot = GUI.nRoot;
     static Button equals = GUI.equals;
     protected static void attachOperationButtonCodes(){
-        add.setOnAction(e -> storeOperator(operations[0]));
-        subtract.setOnAction(e -> storeOperator(operations[1]));
-        times.setOnAction(e -> storeOperator(operations[2]));
-        dividedBy.setOnAction(e -> storeOperator(operations[3]));
-        squareRoot.setOnAction(e -> storeOperator(operations[4]));
-        nRoot.setOnAction(e -> storeOperator(operations[5]));
-        equals.setOnAction(e -> performOperation());
+        add.setOnAction(e -> {
+            calculator.add();
+            updateDisplay();
+        });
+        subtract.setOnAction(e -> {
+            calculator.subtract();
+            updateDisplay();
+        });
+        times.setOnAction(e -> {
+            calculator.multiply();
+            updateDisplay();
+        });
+        dividedBy.setOnAction(e -> {
+            calculator.divide();
+            updateDisplay();
+        });
+        squareRoot.setOnAction(e -> {
+            calculator.squareRoot();
+            updateDisplay();
+        });
+        nRoot.setOnAction(e -> {
+//            calculator.squareRoot();
+            updateDisplay();
+        });
+        equals.setOnAction(e -> {
+            calculator.equals();
+            updateDisplay();
+        });
     }
 
-    private static void performOperation() {
-        //Need to:
-        //check for invalid input
-        //find answer
-        //display output (decimal and quaternary)
-        if(operationValueFlag){
-            for(int i=0; i<=operations.length-1; i++){
-                if(currentOperator.equals(operations[i])){
-                    GUI.outputToggleArea.appendText("still thinking...");
-                }
-            }
-        }
-    }
-
-    private static void storeOperator(String operator){
-        operationValueFlag = true;
-        currentOperator = operator;
-        quaternaryOperationInstructions.add(operator);
-    }
-    //class variables
-    private static boolean operationValueFlag;
-    private static final LinkedList<String> quaternaryOperationInstructions = new LinkedList<>();
-    private static final String[] operations = {"+", "-", "x", "÷", "√", "n*√", "="};
-    private static String currentOperator;
     static void attachButtonCodes(){
         attachDigitButtonCode();
         attachOperationButtonCodes();
