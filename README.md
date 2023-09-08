@@ -1,6 +1,10 @@
 # Quaternary-Calculator
 By Calc Team 6<br><br>
-A calculator that is designed to perform addition, subtraction, multiplication, and division with numbers in the quaternary form. Created for CS495 by a class of senior computer science students.
+![calc01](https://github.com/Kroll-man/Quaternary-Calculator/assets/97885755/2a8259fd-07b1-4e8b-b51b-2c703e5d254b)
+
+
+A calculator that is designed to perform addition, subtraction, multiplication, and division with numbers in the quaternary form. Created for CS495 by a class of senior computer science students.<br><br>
+A quaternary number can be entered by the user, then the user has two options; press the (+,-,X,/) operator and enter another quaternary number or you can press the (sqr, sqrt) to perform the sqaure or the square root operations respectively on the single quaternary number.
 # Team Distribution
 - Ellie Bertke = CalculatorGUI.GUI design in JavaFX...
 - Grant Witty = Initial commit, Add calculator classes, Add FromQuaternary & respective tests...
