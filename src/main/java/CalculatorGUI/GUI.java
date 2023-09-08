@@ -4,21 +4,23 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import java.awt.*;
-import static java.awt.Label.CENTER;
+import javafx.stage.StageStyle;
+
 public class GUI extends Application {
-    Label calculatorTitle = new Label("Quaternary Calculator I", CENTER);
-    TextArea inputAreaQuaternary = new TextArea();
+    static TextArea inputAreaQuaternary = new TextArea();
     TextArea outputToggleArea = new TextArea();
-    Button zero = new Button("0");
-    Button one = new Button("1");
-    Button two = new Button("2");
-    Button three = new Button("3");
+    static Button zero = new Button("0");
+    static Button one = new Button("1");
+    static Button two = new Button("2");
+    static Button three = new Button("3");
     Button plus = new Button("+");
     Button minus = new Button("-");
     Button divide = new Button("÷");
@@ -30,6 +32,7 @@ public class GUI extends Application {
     Button clear = new Button("CLR");
     Button delete = new Button("DEL");
     Button equals = new Button("=");
+    GridPane calculatorRoot = new GridPane();
     public static void main(String[] args) throws Exception{
         launch(args);
     }
@@ -40,25 +43,22 @@ public class GUI extends Application {
 
     //building GUI Calculator structure:
     private void configureWindow(Stage stage) {
-        calculatorTitle.setBounds(0,3, 600, 50);
-        calculatorTitle.setBackground(Color.lightGray);
-        Scene scene = new Scene(new VBox(setupGridPaneAlignment()), 600, 500);
-        stage.setTitle("CS 495 Group 6 ~ Quaternary Calculator");
-        stage.setScene(scene);
+        stage.setScene(new Scene(new VBox(setupGridPaneAlignment()), 500,550, Paint.valueOf("#add8e6")));
+        stage.setTitle("~ QUATERNARY CALCULATOR ~ (CS 495 Group 6)");
         stage.sizeToScene();
         stage.show();
     }
     private GridPane setupGridPaneAlignment() {
-        GridPane calculatorRoot = new GridPane();
+        calculatorRoot.setStyle("#add8e6");
         calculatorRoot.setAlignment(Pos.CENTER);
         calculatorRoot.setHgap(10);
         calculatorRoot.setVgap(10);
         //input & output text areas
         calculatorRoot.add(inputAreaQuaternary, 1,0,7,1);
-        calculatorRoot.add(outputToggleArea, 13,0,8,14);
+        calculatorRoot.add(outputToggleArea, 13,0,9,14);
         //delete and clear buttons
-        calculatorRoot.add(delete,9,1,2,1);
-        calculatorRoot.add(clear, 11, 1, 2, 1);
+        calculatorRoot.add(delete,8,1,2,2);
+        calculatorRoot.add(clear, 9, 1, 2, 2);
         //number input buttons
         calculatorRoot.add(zero,3,4,1,3);
         calculatorRoot.add(one, 5, 4, 1, 3);
@@ -73,9 +73,10 @@ public class GUI extends Application {
         calculatorRoot.add(squareRoot, 8,9,2,3);
         calculatorRoot.add(nRoot,9,9,5,3);
         //toggle buttons
-        calculatorRoot.add(decimalToggle,14,14,4,1);
-        calculatorRoot.add(quaternaryToggle, 18,14,6,1);
+        calculatorRoot.add(decimalToggle,12,14,4,1);
+        calculatorRoot.add(quaternaryToggle, 17,14,6,1);
         setControlProperties();
+        GUIController.attachCode();
         return calculatorRoot;
     }
     private void setControlProperties(){
