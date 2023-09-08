@@ -1,8 +1,8 @@
 package CalculatorLogic;
 public class Calculator {
-    static QuaternaryConverter converter = new QuaternaryConverter();
+    QuaternaryConverter converter = new QuaternaryConverter();
     Boolean displayInDecimal;
-    static int value = 0;
+    int value = 0;
     int secondValue = 0;
     int state = 0;
 
@@ -18,8 +18,8 @@ public class Calculator {
         return displayInDecimal ? value : converter.toQuaternary(value);
     }
 
-    public static void addDigit(int digit) {
-        value = converter.fromQuaternary(converter.toQuaternary(value) * 4 + digit);
+    public void addDigit(int digit) {
+        value = converter.fromQuaternary(converter.toQuaternary(value) * 10 + digit);
     }
 
     public void deleteDigit() {

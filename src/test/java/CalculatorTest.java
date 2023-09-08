@@ -21,7 +21,9 @@ public class CalculatorTest {
         Calculator calculator = new Calculator(false);
         calculator.addDigit(1);
         calculator.addDigit(2);
-        Assertions.assertEquals(12, calculator.displayValue());
+        calculator.addDigit(3);
+        calculator.addDigit(0);
+        Assertions.assertEquals(1230, calculator.displayValue());
     }
 
     @Test

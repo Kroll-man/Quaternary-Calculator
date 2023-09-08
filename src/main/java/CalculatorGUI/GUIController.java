@@ -1,9 +1,11 @@
 package CalculatorGUI;
+import CalculatorLogic.Calculator;
 import javafx.scene.control.Button;
 
 import java.util.LinkedList;
 
 public class GUIController extends GUI {
+    static Calculator calculator = new Calculator(false);
     //digit Buttons
     static Button zero = GUI.zero;
     static Button one = GUI.one;
@@ -16,8 +18,8 @@ public class GUIController extends GUI {
         three.setOnAction(e -> readDigitInput(3));
     }
     private static void readDigitInput(int quaternaryInt){
-        GUI.inputAreaQuaternary.appendText(String.valueOf(quaternaryInt));
-        quaternaryOperationInstructions.add(String.valueOf(quaternaryInt));
+        calculator.addDigit(quaternaryInt);
+        GUI.inputAreaQuaternary.setText(String.valueOf(calculator.displayValue()));
     }
 
     //display-edit Buttons
