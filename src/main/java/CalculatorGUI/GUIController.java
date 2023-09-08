@@ -81,7 +81,7 @@ public class GUIController extends GUI {
             updateDisplay();
         });
         decimalToggle.setOnAction(event -> {
-            calculator.toggleDisplay();
+            calculator.decimalDisplay();
             updateDisplay();
         });
     }

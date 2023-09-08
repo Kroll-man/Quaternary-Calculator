@@ -14,6 +14,10 @@ public class Calculator {
         displayInDecimal = !displayInDecimal;
     }
 
+    public void decimalDisplay() { displayInDecimal = true; }
+
+    public void quaternaryDisplay() { displayInDecimal = false; }
+
     public long displayValue() {
         return displayInDecimal ? value : converter.toQuaternary(value);
     }
