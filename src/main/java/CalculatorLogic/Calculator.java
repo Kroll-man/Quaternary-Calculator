@@ -2,8 +2,8 @@ package CalculatorLogic;
 public class Calculator {
     QuaternaryConverter converter = new QuaternaryConverter();
     Boolean displayInDecimal;
-    int value = 0;
-    int secondValue = 0;
+    long value = 0;
+    long secondValue = 0;
     int state = 0;
 
     public Calculator(Boolean displayInDecimal) {
@@ -14,11 +14,11 @@ public class Calculator {
         displayInDecimal = !displayInDecimal;
     }
 
-    public int displayValue() {
+    public long displayValue() {
         return displayInDecimal ? value : converter.toQuaternary(value);
     }
 
-    public void addDigit(int digit) {
+    public void addDigit(long digit) {
         value = converter.fromQuaternary(converter.toQuaternary(value) * 10 + digit);
     }
 
@@ -77,6 +77,6 @@ public class Calculator {
             return;
         }
 
-        value = (int) Math.sqrt(value);
+        value = (long) Math.sqrt(value);
     }
 }

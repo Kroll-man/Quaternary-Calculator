@@ -27,6 +27,24 @@ public class CalculatorTest {
     }
 
     @Test
+    public void testAddManyDigits() {
+        Calculator calculator = new Calculator(false);
+        calculator.addDigit(1);
+        calculator.addDigit(2);
+        calculator.addDigit(3);
+        calculator.addDigit(0);
+        calculator.addDigit(1);
+        calculator.addDigit(2);
+        calculator.addDigit(3);
+        calculator.addDigit(0);
+        calculator.addDigit(1);
+        calculator.addDigit(2);
+        calculator.addDigit(3);
+        calculator.addDigit(0);
+        Assertions.assertEquals(123012301230L, calculator.displayValue());
+    }
+
+    @Test
     public void testToggleDisplay() {
         Calculator calculator = new Calculator(false);
         calculator.addDigit(1);

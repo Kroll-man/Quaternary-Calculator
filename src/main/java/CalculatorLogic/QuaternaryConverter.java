@@ -2,26 +2,26 @@ package CalculatorLogic;
 
 public class QuaternaryConverter {
 
-    public int fromQuaternary(int quaternary) {
+    public long fromQuaternary(long quaternary) {
         int index = 0;
-        int decimal = 0;
-        int nextDigit;
+        long decimal = 0;
+        long nextDigit;
         while (quaternary !=0) {
             nextDigit = quaternary % 10;
-            decimal+= nextDigit * Math.pow(4,index);
+            decimal+= (long) (nextDigit * Math.pow(4,index));
             index +=1;
             quaternary = quaternary/10;
         }
         return decimal;
     }
 
-    public int toQuaternary(int decimal) {
+    public long toQuaternary(long decimal) {
         int index = 0;
-        int quaternary = 0;
-        int nextDigit;
+        long quaternary = 0;
+        long nextDigit;
         while (decimal !=0) {
             nextDigit = decimal % 4;
-            quaternary+= nextDigit * Math.pow(10,index);
+            quaternary+= (long) (nextDigit * Math.pow(10,index));
             index +=1;
             decimal = decimal/4;
         }
