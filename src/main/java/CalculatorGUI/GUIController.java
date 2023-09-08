@@ -48,7 +48,7 @@ public class GUIController extends GUI {
     static Button times = GUI.multiply;
     static Button dividedBy = GUI.divide;
     static Button squareRoot = GUI.squareRoot;
-    static Button nRoot = GUI.nRoot;
+    static Button square = GUI.square;
     static Button equals = GUI.equals;
     static Button decimalToggle = GUI.decimalToggle;
     static Button quaternaryToggle = GUI.quaternaryToggle;
@@ -73,8 +73,8 @@ public class GUIController extends GUI {
             calculator.squareRoot();
             updateDisplay();
         });
-        nRoot.setOnAction(e -> {
-//            calculator.squareRoot();
+        square.setOnAction(e -> {
+            calculator.square();
             updateDisplay();
         });
         equals.setOnAction(e -> {

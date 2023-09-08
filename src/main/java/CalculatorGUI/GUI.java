@@ -24,7 +24,7 @@ public class GUI extends Application {
     static Button divide = new Button("÷");
     static Button multiply = new Button("x");
     static Button squareRoot = new Button("√");
-    static Button nRoot = new Button("n*√");
+    static Button square = new Button("^2");
     static Button decimalToggle = new Button("DECIMAL");
     static Button quaternaryToggle = new Button("QUATERNARY");
     static Button clear = new Button("CLR");
@@ -69,7 +69,7 @@ public class GUI extends Application {
         calculatorRoot.add(multiply,8,7,1,2);
         calculatorRoot.add(divide,9,7,1,2);
         calculatorRoot.add(squareRoot, 8,9,2,3);
-        calculatorRoot.add(nRoot,9,9,5,3);
+        calculatorRoot.add(square,9,9,5,3);
         //toggle buttons
         calculatorRoot.add(decimalToggle,12,14,4,1);
         calculatorRoot.add(quaternaryToggle, 17,14,6,1);
@@ -85,8 +85,8 @@ public class GUI extends Application {
         }
         clear.setFont(Font.font("Verdana", FontWeight.BOLD, 9));
         delete.setFont(Font.font("Verdana", FontWeight.BOLD, 9));
-        nRoot.setFont(Font.font("Verdana", FontWeight.BOLD, 7));
-        nRoot.setPrefSize(40,90);
+        square.setFont(Font.font("Verdana", FontWeight.BOLD, 7));
+        square.setPrefSize(40,90);
         clear.setPrefSize(38,28);
         delete.setPrefSize(38,28);
         equals.setPrefSize(90,40);
@@ -94,7 +94,7 @@ public class GUI extends Application {
         decimalToggle.setFont(Font.font("Verdana", FontWeight.BOLD, 10));
         quaternaryToggle.setPrefSize(100,40);
         quaternaryToggle.setFont(Font.font("Verdana", FontWeight.BOLD, 10));
-        Button[] operationButtonSet = {plus, minus, multiply, divide, squareRoot, nRoot};
+        Button[] operationButtonSet = {plus, minus, multiply, divide, squareRoot, square};
         for(int i=0; i<=operationButtonSet.length-1; i++){
             Button button = operationButtonSet[i];
             button.setPrefSize(30,80);
