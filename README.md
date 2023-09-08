@@ -15,3 +15,4 @@ A quaternary number can be entered by the user, then the user has two options; p
 # Meetings
 - 2023-09-05, 3:30pm to 7:00 pm. Attendees: all (In-person Grant, William, Jeffrey, Ellie; Virtual via Slack Victoria). Discussed general program layout and functionality
 - 2023-09-06, 4:10pm to 5:00 pm. Attendees: In-person Grant, William, Jeffrey, Ellie. Discussed current functionality progress and brainstormed ideas for implementation of CalculatorGUI.GUI/Logic interaction.
+- 2023-09-08, 4:00pm to 6:00 pm. Attendees: In-person Grant, Jeffrey, Ellie. Changed calculator layout and implemented button functionality.
