@@ -1,6 +1,8 @@
 package CalculatorGUI;
 import CalculatorLogic.Calculator;
 import javafx.scene.control.Button;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 
 import java.util.LinkedList;
 
@@ -90,6 +92,12 @@ public class GUIController extends GUI {
             updateDisplay();
         });
 
+        inputAreaQuaternary.setOnMouseClicked(e -> {
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            ClipboardContent content = new ClipboardContent();
+            content.putString(inputAreaQuaternary.getText());
+            clipboard.setContent(content);
+        });
     }
 
     static void attachButtonCodes(){
