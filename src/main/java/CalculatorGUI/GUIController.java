@@ -51,6 +51,7 @@ public class GUIController extends GUI {
     static Button nRoot = GUI.nRoot;
     static Button equals = GUI.equals;
     static Button decimalToggle = GUI.decimalToggle;
+    static Button quaternaryToggle = GUI.quaternaryToggle;
     protected static void attachOperationButtonCodes(){
         add.setOnAction(e -> {
             calculator.add();
@@ -84,6 +85,11 @@ public class GUIController extends GUI {
             calculator.decimalDisplay();
             updateDisplay();
         });
+        quaternaryToggle.setOnAction(event -> {
+            calculator.quaternaryDisplay();
+            updateDisplay();
+        });
+
     }
 
     static void attachButtonCodes(){
