@@ -6,6 +6,10 @@ import java.util.LinkedList;
 
 public class GUIController extends GUI {
     static Calculator calculator = new Calculator(false);
+
+    private static void updateDisplay() {
+        GUI.inputAreaQuaternary.setText(String.valueOf(calculator.displayValue()));
+    }
     //digit Buttons
     static Button zero = GUI.zero;
     static Button one = GUI.one;
@@ -19,7 +23,7 @@ public class GUIController extends GUI {
     }
     private static void readDigitInput(int quaternaryInt){
         calculator.addDigit(quaternaryInt);
-        GUI.inputAreaQuaternary.setText(String.valueOf(calculator.displayValue()));
+        updateDisplay();
     }
 
     //display-edit Buttons
@@ -30,12 +34,12 @@ public class GUIController extends GUI {
         delete.setOnAction(e -> deleteLastTypedDigit());
     }
     private static void clearOutputDisplay(){
-        for(String characterTyped : quaternaryOperationInstructions){
-            quaternaryOperationInstructions.remove(characterTyped);
-        }
+        calculator.clear();
+        updateDisplay();
     }
     private static void deleteLastTypedDigit(){
-        quaternaryOperationInstructions.removeLast();
+        calculator.deleteDigit();
+        updateDisplay();
     }
 
     //operation Buttons
@@ -84,6 +88,7 @@ public class GUIController extends GUI {
         attachDigitButtonCode();
         attachOperationButtonCodes();
         attachEditButtonCodes();
+        updateDisplay();
     }
 
 
