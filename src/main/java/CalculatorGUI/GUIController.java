@@ -50,6 +50,7 @@ public class GUIController extends GUI {
     static Button squareRoot = GUI.squareRoot;
     static Button nRoot = GUI.nRoot;
     static Button equals = GUI.equals;
+    static Button decimalToggle = GUI.decimalToggle;
     protected static void attachOperationButtonCodes(){
         add.setOnAction(e -> {
             calculator.add();
@@ -77,6 +78,10 @@ public class GUIController extends GUI {
         });
         equals.setOnAction(e -> {
             calculator.equals();
+            updateDisplay();
+        });
+        decimalToggle.setOnAction(event -> {
+            calculator.toggleDisplay();
             updateDisplay();
         });
     }

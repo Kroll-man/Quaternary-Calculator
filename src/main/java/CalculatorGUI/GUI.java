@@ -25,7 +25,7 @@ public class GUI extends Application {
     static Button multiply = new Button("x");
     static Button squareRoot = new Button("√");
     static Button nRoot = new Button("n*√");
-    Button decimalToggle = new Button("DECIMAL");
+    static Button decimalToggle = new Button("DECIMAL");
     Button quaternaryToggle = new Button("QUATERNARY");
     static Button clear = new Button("CLR");
     static Button delete = new Button("DEL");
