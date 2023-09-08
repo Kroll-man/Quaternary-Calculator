@@ -4,50 +4,48 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class GUI extends Application {
+    //creating controls
     static TextArea inputAreaQuaternary = new TextArea();
-    TextArea outputToggleArea = new TextArea();
+    static TextArea outputToggleArea = new TextArea();
     static Button zero = new Button("0");
     static Button one = new Button("1");
     static Button two = new Button("2");
     static Button three = new Button("3");
-    Button plus = new Button("+");
-    Button minus = new Button("-");
-    Button divide = new Button("÷");
-    Button multiply = new Button("x");
-    Button squareRoot = new Button("√");
-    Button nRoot = new Button("n*√");
+    static Button plus = new Button("+");
+    static Button minus = new Button("-");
+    static Button divide = new Button("÷");
+    static Button multiply = new Button("x");
+    static Button squareRoot = new Button("√");
+    static Button nRoot = new Button("n*√");
     Button decimalToggle = new Button("DECIMAL");
     Button quaternaryToggle = new Button("QUATERNARY");
-    Button clear = new Button("CLR");
-    Button delete = new Button("DEL");
-    Button equals = new Button("=");
+    static Button clear = new Button("CLR");
+    static Button delete = new Button("DEL");
+    static Button equals = new Button("=");
     GridPane calculatorRoot = new GridPane();
-    public static void main(String[] args) throws Exception{
+    //methods that launch application:
+    public static void main(String[] args) {
         launch(args);
     }
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage){
         configureWindow(primaryStage);
     }
-
-    //building GUI Calculator structure:
     private void configureWindow(Stage stage) {
         stage.setScene(new Scene(new VBox(setupGridPaneAlignment()), 500,550, Paint.valueOf("#add8e6")));
         stage.setTitle("~ QUATERNARY CALCULATOR ~ (CS 495 Group 6)");
         stage.sizeToScene();
         stage.show();
     }
+    //building GUI Calculator structure:
     private GridPane setupGridPaneAlignment() {
         calculatorRoot.setStyle("#add8e6");
         calculatorRoot.setAlignment(Pos.CENTER);
@@ -76,7 +74,7 @@ public class GUI extends Application {
         calculatorRoot.add(decimalToggle,12,14,4,1);
         calculatorRoot.add(quaternaryToggle, 17,14,6,1);
         setControlProperties();
-        GUIController.attachCode();
+        GUIController.attachButtonCodes();
         return calculatorRoot;
     }
     private void setControlProperties(){
