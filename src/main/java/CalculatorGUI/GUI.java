@@ -12,9 +12,10 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class GUI extends Application {
+
     //creating controls
-    static TextArea inputAreaQuaternary = new TextArea();
-    static TextArea outputToggleArea = new TextArea();
+    static TextArea displayAreaSecondary = new TextArea();
+    static TextArea displayAreaPrimary = new TextArea();
     static Button zero = new Button("0");
     static Button one = new Button("1");
     static Button two = new Button("2");
@@ -25,8 +26,7 @@ public class GUI extends Application {
     static Button multiply = new Button("x");
     static Button squareRoot = new Button("√");
     static Button square = new Button("^2");
-    static Button decimalToggle = new Button("DECIMAL");
-    static Button quaternaryToggle = new Button("QUATERNARY");
+    static Button displayToggle = new Button("DEC/QUAT");
     static Button clear = new Button("CLR");
     static Button delete = new Button("DEL");
     static Button equals = new Button("=");
@@ -40,7 +40,7 @@ public class GUI extends Application {
         configureWindow(primaryStage);
     }
     private void configureWindow(Stage stage) {
-        stage.setScene(new Scene(new VBox(setupGridPaneAlignment()), 500,550, Paint.valueOf("#add8e6")));
+        stage.setScene(new Scene(new VBox(setupGridPaneAlignment()), 550,550, Paint.valueOf("#add8e6")));
         stage.setTitle("~ QUATERNARY CALCULATOR ~ (CS 495 Group 6)");
         stage.sizeToScene();
         stage.show();
@@ -52,27 +52,31 @@ public class GUI extends Application {
         calculatorRoot.setHgap(10);
         calculatorRoot.setVgap(10);
         //input & output text areas
-        calculatorRoot.add(inputAreaQuaternary, 1,0,7,1);
-        calculatorRoot.add(outputToggleArea, 13,0,9,14);
-        //delete and clear buttons
-        calculatorRoot.add(delete,8,1,2,2);
-        calculatorRoot.add(clear, 9, 1, 2, 2);
-        //number input buttons
-        calculatorRoot.add(zero,3,4,1,3);
-        calculatorRoot.add(one, 5, 4, 1, 3);
-        calculatorRoot.add(two, 3,8,1,3);
-        calculatorRoot.add(three, 5,8,1,3);
-        calculatorRoot.add(equals,3,13,3,1);
+        calculatorRoot.add(displayAreaSecondary, 6, 0, 3, 1);
+        calculatorRoot.add(displayAreaPrimary, 0, 1, 10, 2);
+
+        //digit buttons
+        calculatorRoot.add(zero, 0, 3, 3, 3);
+        calculatorRoot.add(one, 3, 3, 3, 3);
+        calculatorRoot.add(two, 0, 6, 3, 3);
+        calculatorRoot.add(three, 3, 6, 3, 3);
+
         //operation buttons
-        calculatorRoot.add(plus, 8,5,1,2);
-        calculatorRoot.add(minus, 9,5,1,2);
-        calculatorRoot.add(multiply,8,7,1,2);
-        calculatorRoot.add(divide,9,7,1,2);
-        calculatorRoot.add(squareRoot, 8,9,2,3);
-        calculatorRoot.add(square,9,9,5,3);
-        //toggle buttons
-        calculatorRoot.add(decimalToggle,12,14,4,1);
-        calculatorRoot.add(quaternaryToggle, 17,14,6,1);
+        calculatorRoot.add(plus, 6, 5, 2, 2);
+        calculatorRoot.add(minus, 8, 5, 2, 2);
+        calculatorRoot.add(multiply, 6, 7, 2, 2);
+        calculatorRoot.add(divide, 8, 7, 2, 2);
+        calculatorRoot.add(squareRoot, 6, 9, 2, 2);
+        calculatorRoot.add(square, 8, 9, 2, 2);
+
+        //control buttons
+        calculatorRoot.add(clear, 6, 3, 2, 2);
+        calculatorRoot.add(delete, 8, 3, 2, 2);
+        calculatorRoot.add(displayToggle, 0, 9, 2, 2);
+        calculatorRoot.add(equals, 2, 9, 4, 2);
+
+
+
         setControlProperties();
         GUIController.attachButtonCodes();
         return calculatorRoot;
@@ -85,30 +89,25 @@ public class GUI extends Application {
         }
         clear.setFont(Font.font("Verdana", FontWeight.BOLD, 9));
         delete.setFont(Font.font("Verdana", FontWeight.BOLD, 9));
-        square.setFont(Font.font("Verdana", FontWeight.BOLD, 7));
-        square.setPrefSize(40,90);
-        clear.setPrefSize(38,28);
-        delete.setPrefSize(38,28);
-        equals.setPrefSize(90,40);
-        decimalToggle.setPrefSize(90,40);
-        decimalToggle.setFont(Font.font("Verdana", FontWeight.BOLD, 10));
-        quaternaryToggle.setPrefSize(100,40);
-        quaternaryToggle.setFont(Font.font("Verdana", FontWeight.BOLD, 10));
+        square.setFont(Font.font("Verdana", FontWeight.BOLD, 9));
+        equals.setPrefSize(190,90);
+        displayToggle.setPrefSize(90,90);
+        clear.setPrefSize(90,90);
+        delete.setPrefSize(90,90);
+        displayToggle.setFont(Font.font("Verdana", FontWeight.BOLD, 10));
         Button[] operationButtonSet = {plus, minus, multiply, divide, squareRoot, square};
         for(int i=0; i<=operationButtonSet.length-1; i++){
             Button button = operationButtonSet[i];
-            button.setPrefSize(30,80);
+            button.setPrefSize(90,90);
         }
         Button[] digitButtonSet = {zero, one, two, three};
         for(int i=0; i<=digitButtonSet.length-1; i++){
             Button button = digitButtonSet[i];
-            button.setPrefSize(30,90);
+            button.setPrefSize(140,140);
         }
-        inputAreaQuaternary.setPrefSize(180, 30);
-        inputAreaQuaternary.setEditable(false);
-        outputToggleArea.setPrefSize(200,400);
-        outputToggleArea.setEditable(false);
-        outputToggleArea.setWrapText(true);
+        displayAreaPrimary.setPrefSize(490, 40);
+        displayAreaPrimary.setEditable(false);
+        displayAreaSecondary.setPrefSize(140, 40);
+        displayAreaSecondary.setEditable(false);
     }
-
 }

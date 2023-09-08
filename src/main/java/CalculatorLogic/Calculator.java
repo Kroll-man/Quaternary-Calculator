@@ -18,6 +18,10 @@ public class Calculator {
 
     public void quaternaryDisplay() { displayInDecimal = false; }
 
+    public long secondValue() {
+        return displayInDecimal ? secondValue : converter.toQuaternary(secondValue);
+    }
+
     public long displayValue() {
         return displayInDecimal ? value : converter.toQuaternary(value);
     }

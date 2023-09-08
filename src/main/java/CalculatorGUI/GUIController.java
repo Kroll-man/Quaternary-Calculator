@@ -4,13 +4,12 @@ import javafx.scene.control.Button;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 
-import java.util.LinkedList;
-
 public class GUIController extends GUI {
     static Calculator calculator = new Calculator(false);
 
     private static void updateDisplay() {
-        GUI.inputAreaQuaternary.setText(String.valueOf(calculator.displayValue()));
+        GUI.displayAreaPrimary.setText(String.valueOf(calculator.displayValue()));
+        GUI.displayAreaSecondary.setText(String.valueOf(calculator.secondValue()));
     }
     //digit Buttons
     static Button zero = GUI.zero;
@@ -52,8 +51,8 @@ public class GUIController extends GUI {
     static Button squareRoot = GUI.squareRoot;
     static Button square = GUI.square;
     static Button equals = GUI.equals;
-    static Button decimalToggle = GUI.decimalToggle;
-    static Button quaternaryToggle = GUI.quaternaryToggle;
+    static Button decimalToggle = GUI.displayToggle;
+//    static Button quaternaryToggle = GUI.quaternaryToggle;
     protected static void attachOperationButtonCodes(){
         add.setOnAction(e -> {
             calculator.add();
@@ -84,18 +83,14 @@ public class GUIController extends GUI {
             updateDisplay();
         });
         decimalToggle.setOnAction(event -> {
-            calculator.decimalDisplay();
-            updateDisplay();
-        });
-        quaternaryToggle.setOnAction(event -> {
-            calculator.quaternaryDisplay();
+            calculator.toggleDisplay();
             updateDisplay();
         });
 
-        inputAreaQuaternary.setOnMouseClicked(e -> {
+        displayAreaPrimary.setOnMouseClicked(e -> {
             Clipboard clipboard = Clipboard.getSystemClipboard();
             ClipboardContent content = new ClipboardContent();
-            content.putString(inputAreaQuaternary.getText());
+            content.putString(displayAreaPrimary.getText());
             clipboard.setContent(content);
         });
     }
