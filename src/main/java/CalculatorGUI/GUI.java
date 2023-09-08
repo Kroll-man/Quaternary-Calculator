@@ -22,10 +22,10 @@ public class GUI extends Application {
     static Button three = new Button("3");
     static Button plus = new Button("+");
     static Button minus = new Button("-");
-    static Button divide = new Button("÷");
+    static Button divide = new Button("\u00F7");
     static Button multiply = new Button("x");
-    static Button squareRoot = new Button("√");
-    static Button square = new Button("^2");
+    static Button squareRoot = new Button("\u221A");
+    static Button square = new Button("x"+"\u00B2");
     static Button displayToggle = new Button("DEC/QUAT");
     static Button clear = new Button("CLR");
     static Button delete = new Button("DEL");
@@ -47,7 +47,6 @@ public class GUI extends Application {
     }
     //building GUI Calculator structure:
     private GridPane setupGridPaneAlignment() {
-        calculatorRoot.setStyle("#add8e6");
         calculatorRoot.setAlignment(Pos.CENTER);
         calculatorRoot.setHgap(10);
         calculatorRoot.setVgap(10);
